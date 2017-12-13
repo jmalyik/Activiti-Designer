@@ -18,7 +18,6 @@ import org.activiti.bpmn.model.UserTask;
 import org.activiti.designer.util.eclipse.ActivitiUiUtil;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
-import org.eclipse.graphiti.ui.editor.DiagramEditor;
 
 public class AbstractPropertyCustomTaskSection extends BaseActivitiPropertySection {
 
@@ -27,8 +26,7 @@ public class AbstractPropertyCustomTaskSection extends BaseActivitiPropertySecti
     if (pe != null) {
       Object bo = getBusinessObject(pe);
       if (bo instanceof ServiceTask || bo instanceof UserTask) {
-        DiagramEditor diagramEditor = (DiagramEditor) getDiagramEditor();
-        TransactionalEditingDomain editingDomain = diagramEditor.getEditingDomain();
+        TransactionalEditingDomain editingDomain = getTransactionalEditingDomain();
         ActivitiUiUtil.runModelChange(runnable, editingDomain, "Model Update");
       }
     }

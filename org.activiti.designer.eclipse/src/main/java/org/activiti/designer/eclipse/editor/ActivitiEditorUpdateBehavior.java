@@ -25,15 +25,18 @@ import org.eclipse.graphiti.ui.editor.DiagramBehavior;
  * @author Heiko Kopp
  */
 public class ActivitiEditorUpdateBehavior extends DefaultUpdateBehavior {
-
+	
+  private final DiagramBehavior diagramBehavior;
+  
   public ActivitiEditorUpdateBehavior(final DiagramBehavior diagramBehavior) {
     super(diagramBehavior);
+    this.diagramBehavior = diagramBehavior;
   }
 
   @Override
   public TransactionalEditingDomain getEditingDomain() {
     if (super.getEditingDomain() == null) {
-      createEditingDomain();
+      createEditingDomain(diagramBehavior.getDiagramContainer().getDiagramEditorInput());
     }
 
     return super.getEditingDomain();

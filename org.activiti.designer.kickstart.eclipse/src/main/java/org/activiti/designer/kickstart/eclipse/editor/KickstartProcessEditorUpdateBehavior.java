@@ -26,14 +26,16 @@ import org.eclipse.graphiti.ui.editor.DiagramBehavior;
  */
 public class KickstartProcessEditorUpdateBehavior extends DefaultUpdateBehavior {
 
+  final private DiagramBehavior diagramBehavior;
   public KickstartProcessEditorUpdateBehavior(DiagramBehavior diagramBehavior) {
     super(diagramBehavior);
+    this.diagramBehavior = diagramBehavior;
   }
 
   @Override
   public TransactionalEditingDomain getEditingDomain() {
     if (super.getEditingDomain() == null) {
-      createEditingDomain();
+      createEditingDomain(diagramBehavior.getDiagramContainer().getDiagramEditorInput());
     }
 
     return super.getEditingDomain();

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description name="Activiti Eclipse BPMN 2.0 Designer Update Site" url="http://activiti.org/designer/update">
-      Activiti Eclipse BPMN 2.0 Designer Update Site
+   <description name="Activiti Eclipse BPMN 2.0 Designer (hacked) Update Site" url="http://activiti.org/designer/update">
+      Activiti Eclipse BPMN 2.0 Designer (hacked) Update Site
    </description>
-   <feature url="features/org.activiti.designer.feature_5.18.1.qualifier.jar" id="org.activiti.designer.feature" version="5.18.1.qualifier">
+   <feature url="features/org.activiti.designer.feature_5.18.2.qualifier.jar" id="org.activiti.designer.feature" version="5.18.2.qualifier">
       <category name="designer"/>
    </feature>
    <category-def name="designer" label="Activiti BPMN Designer">
       <description>
-         Activiti BPMN Designer
+         Activiti BPMN Designer hacked for Eclipse Mars support
       </description>
    </category-def>
 </site>
